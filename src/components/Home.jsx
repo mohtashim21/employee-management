@@ -21,10 +21,9 @@ const Home = () => {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Job</th>
+                    <th>Position</th>
                     <th>Salary</th>
                     <th>Department</th>
-                    <th>Position</th>
                     <th>Hire date</th>
                 </tr>
             </thead>
@@ -34,10 +33,9 @@ const Home = () => {
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
-                        <td>{user.job}</td>
+                        <td>{user.position}</td>
                         <td>{user.salary}</td>
                         <td>{user.department}</td>
-                        <td>{user.position}</td>
                         <td>{user.hireDate}</td>
                         <td>
                             <Link to={`/edit/${user.id}`} className='btn btn-sm btn-primary'>Edit</Link>

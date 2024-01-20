@@ -11,15 +11,14 @@ const userSlice = createSlice({
             console.log(action.payload)
         },
         updateUser: (state, action) => {
-            const {id, name, email, job, salary, department, position, hireDate} = action.payload
+            const {id, name, email, position, salary, department, hireDate} = action.payload
             const updatingUser = state.find(user => user.id == id);
             if(updatingUser){
                 updatingUser.name = name;
                 updatingUser.email = email;
-                updatingUser.job = job;
+                updatingUser.position = job;
                 updatingUser.salary = salary;
                 updatingUser.department = department;
-                updatingUser.position = position;
                 updatingUser.hireDate = hireDate;
             }
         },

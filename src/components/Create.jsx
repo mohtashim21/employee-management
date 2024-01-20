@@ -6,10 +6,9 @@ import { useNavigate } from 'react-router-dom'
 const Create = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [job, setjob] = useState("")
+    const [position, setposition] = useState("")
     const [salary, setsalary] = useState("")
     const [department, setdepartment] = useState("")
-    const [position, setposition] = useState("")
     const [hireDate, sethireDate] = useState("")
 
     const users = useSelector((state) => state.users)
@@ -18,7 +17,7 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addUser({id: users[users.length - 1].id + 1, name, email, job, salary, department, position, hireDate}))
+        dispatch(addUser({id: users[users.length - 1].id + 1, name, email, position, salary, department, hireDate}))
         navigate('/')
     }
 
@@ -35,9 +34,9 @@ const Create = () => {
                     <label htmlFor="email">Email:</label>
                     <input type="email" name='email' className='form-control' placeholder='Enter email' autoComplete='off' onChange={(e) => setEmail(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor="job">Job:</label>
-                    <input type="text" name='job' className='form-control' placeholder='Enter job' autoComplete='off' onChange={(e) => setjob(e.target.value)}/>
+                 <div>
+                    <label htmlFor="position">Position:</label>
+                    <input type="text" name='position' className='form-control' placeholder='Enter position' autoComplete='off' onChange={(e) => setposition(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="salary">Salary:</label>
@@ -46,10 +45,6 @@ const Create = () => {
                 <div>
                     <label htmlFor="department">Department:</label>
                     <input type="text" name='department' className='form-control' placeholder='Enter department' autoComplete='off' onChange={(e) => setdepartment(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="position">Position:</label>
-                    <input type="text" name='position' className='form-control' placeholder='Enter position' autoComplete='off' onChange={(e) => setposition(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="hiredate">Hire Date:</label>

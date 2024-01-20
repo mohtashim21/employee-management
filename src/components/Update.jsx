@@ -8,14 +8,13 @@ const Update = () => {
   const users = useSelector((state) => state.users);
   const existingUserArray = users.filter(singleItem => singleItem.id == id);
 
-  const {name, email, job, salary, department, position, hireDate} = existingUserArray[0];
+  const {name, email, position, salary, department,  hireDate} = existingUserArray[0];
 
   const [uname, setName] = useState(name);
   const [uemail, setEmail] = useState(email);
-  const [ujob, setjob] = useState(job);
+  const [uposition, setposition] = useState(position);
   const [usalary, setsalary] = useState(salary);
   const [udepartment, setdepartment] = useState(department);
-  const [uposition, setposition] = useState(position);
   const [uhireDate, sethireDate] = useState(hireDate);
 
   const dispatch = useDispatch();
@@ -27,10 +26,9 @@ const Update = () => {
       id:id,
       name: uname,
       email: uemail,
-      job: ujob,
+      position: uposition,
       salary: usalary,
       department: udepartment,
-      position: uposition,
       hireDate: uhireDate
     })) 
     navigate('/')
@@ -50,9 +48,9 @@ const Update = () => {
                     <label htmlFor="email">Email:</label>
                     <input type="email" name='email' className='form-control' placeholder='Enter email' value={uemail} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor="job">Job:</label>
-                    <input type="text" name='job' className='form-control' placeholder='Enter job' value={ujob} onChange={(e) => setjob(e.target.value)}/>
+                   <div>
+                    <label htmlFor="position">Position:</label>
+                    <input type="text" name='position' className='form-control' placeholder='Enter position' autoComplete='off' onChange={(e) => setposition(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="salary">Salary:</label>
@@ -61,10 +59,6 @@ const Update = () => {
                 <div>
                     <label htmlFor="department">Department:</label>
                     <input type="text" name='department' className='form-control' placeholder='Enter department' autoComplete='off' onChange={(e) => setdepartment(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="position">Position:</label>
-                    <input type="text" name='position' className='form-control' placeholder='Enter position' autoComplete='off' onChange={(e) => setposition(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="hiredate">Hire Date:</label>
